@@ -24,6 +24,12 @@ namespace ProjetPourTU.Services {
         public IEnumerable<Vehicule> getAll() {
             return vehicules;
         }
+
+        public string CreerMessagePourUnVehicule()
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// Retourne un véhicule par son identifiant
         /// Lève une exception si l'ID est inférieur ou égal à 0
@@ -69,7 +75,8 @@ namespace ProjetPourTU.Services {
         /// <param name="v"></param>
         /// <returns></returns>
         public string CreerMessagePourUnVehicule(Vehicule v) {
-            return "Véhicule : " + v.Nom + ", immatriculation : " + v.Immatriculation;
+            string message="Véhicule : " + v.Nom + ", immatriculation : " + v.Immatriculation;
+            return message;
         }
 
 
