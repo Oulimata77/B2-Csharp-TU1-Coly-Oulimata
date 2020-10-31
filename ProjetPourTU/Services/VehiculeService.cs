@@ -20,7 +20,7 @@ namespace ProjetPourTU.Services {
             AddVehicule(new Vehicule() { ID = 2, Immatriculation = "BBB", Nom = "Toyota Aygo" });
             AddVehicule(new Vehicule() { ID = 3, Immatriculation = "CCC", Nom = "Renault Clio" });
         }
-
+        //ID = 3,
         public IEnumerable<Vehicule> getAll() {
             return vehicules;
         }
@@ -66,7 +66,7 @@ namespace ProjetPourTU.Services {
                 }
             }
             nouveauVehicule.ID = maxID;
-  
+            vehicules.Add(nouveauVehicule);
         }
 
         /// <summary>
@@ -75,8 +75,8 @@ namespace ProjetPourTU.Services {
         /// <param name="v"></param>
         /// <returns></returns>
         public string CreerMessagePourUnVehicule(Vehicule v) {
-            string message="Véhicule : " + v.Nom + ", immatriculation : " + v.Immatriculation;
-            return message;
+
+            return "Véhicule : " + v.Nom + ", immatriculation : " + v.Immatriculation;
         }
 
 
