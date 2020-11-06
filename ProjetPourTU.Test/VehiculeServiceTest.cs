@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
+using NUnit.Framework;
 using ProjetPourTU.Model;
 using ProjetPourTU.Services;
 using ProjetPourTU.Services.CustomExceptions;
@@ -8,7 +9,7 @@ using System.Text;
 
 namespace ProjetPourTU.Test
 {
-    class VehiculeServiceTest
+    public class VehiculeServiceTest
     {
         VehiculeService _testV;
         [SetUp]
@@ -20,10 +21,10 @@ namespace ProjetPourTU.Test
         public void CreerMessageAvecDonneesTest()
         {
             // création de données
-           
+
             string message = _testV.CreerMessage();
             string expected = "Véhicule : Peugeot 308, immatriculation : AAA\nVéhicule : Toyota Aygo, immatriculation : BBB\nVéhicule : Renault Clio, immatriculation : CCC";
-       
+
             Assert.AreEqual(expected, message);
 
         }
@@ -32,20 +33,24 @@ namespace ProjetPourTU.Test
         {
             // création de données
 
-           
+
             try
             {
-                _testV.getByID(-1);
+                _testV.getByID(-6);
                 Assert.Fail("le message aurait du planter");
             }
             catch (InvalidIDException e)
             {
-               
-            }catch(NullReferenceException e)
-            {
+
+                Assert.IsTrue(true);
 
             }
+            catch (VehiculeNotFoundException e)
+            {
+                Assert.Pass();
+            }
         }
+       
 
     }
 }
