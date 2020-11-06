@@ -21,7 +21,8 @@ namespace ProjetPourTU.Services {
             AddVehicule(new Vehicule() { ID = 3, Immatriculation = "CCC", Nom = "Renault Clio" });
         }
         //ID = 3,
-        public IEnumerable<Vehicule> getAll() {
+        public IEnumerable<Vehicule> getAll()
+        {
             return vehicules;
         }
 
