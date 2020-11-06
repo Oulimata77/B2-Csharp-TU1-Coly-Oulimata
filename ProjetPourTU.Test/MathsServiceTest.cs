@@ -12,13 +12,13 @@ namespace ProjetPourTU.Test
         {
             _sv= new MathsService();
         }
+      
         [TestCase(6, 3, 2)]
-        [TestCase(0, 3, 0)]
-
+       
         [Test]
         public void MultiTest(int excepted,int num1,int num2) {
 
-
+           
             decimal result = _sv.Multiplier(num1, num2);
             Assert.AreEqual(excepted, result, "le resultat est faux");
 

@@ -47,10 +47,48 @@ namespace ProjetPourTU.Test
             }
             catch (VehiculeNotFoundException e)
             {
-                Assert.Pass();
+                Assert.IsNull(true);
             }
         }
-       
+        [Test]
+        public void AddVehiculeTest()
+        {
+            // création de données
 
+
+            try
+            {
+                _testV.AddVehicule(null);
+                Assert.Fail("le message aurait du planter");
+            }
+            catch (NullNotAllowedException e)
+            {
+
+                Assert.IsTrue(true);
+
+            }
+            catch (SameIDExistsException e)
+            {
+                Assert.IsNotNull(true);
+            }
+        }
+        [Test]
+        public void CreerMessagePourUnVehiculeTest()
+        {
+            // création de données
+
+            try
+            {
+                _testV.CreerMessagePourUnVehicule();
+                Assert.Fail("le message aurait du planter");
+
+            }
+            catch (NotImplementedException e)
+            {
+                Assert.IsTrue(true);
+            }
+
+        }
+        
     }
 }
